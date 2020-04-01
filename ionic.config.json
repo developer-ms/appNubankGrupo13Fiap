@@ -1,0 +1,7 @@
+{
+  "name": "fiapNubank",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
