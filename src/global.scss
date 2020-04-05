@@ -24,3 +24,85 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+/* Style Default
+*/
+.ion-color-roxo {
+    --ion-color-base: #6e0597c0;
+    --ion-color-base-rgb: 255,255,0;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 0,0,0;
+    --ion-color-shade: #8a05be;
+    --ion-color-tint: #9829c4;
+  }
+
+  .ion-color-gray {
+    --ion-color-base: #f0f0f0;
+    --ion-color-base-rgb: 255, 255, 0;
+    --ion-color-contrast: #8a05be;
+    --ion-color-contrast-rgb: 0, 0, 0;
+    --ion-color-shade: #f0f0f0;
+    --ion-color-tint: #9829c4;
+
+}
+
+ion-item{
+    --background: #ffffff;
+    --background-focused: #ffffff;
+    --background-hover:  RED;
+    --background-hover-opacity: 0;
+    --color:  #6e0597c0;
+    --highlight-color-invalid: red;
+    --highlight-heigh: 50px;
+    --detail-icon-colo: green;
+    margin-top: 10px;
+  }
+
+.roxo{
+    color: #8a05be;
+}
+
+
+
+.login{
+    width: 100%;
+}
+
+.content{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundRoxo{
+    background-color: #8a05be;
+    color: #ffffff;
+}
+
+.backgroundGray{
+    background: #f0efef;
+}
+
+.logo{
+    width: 120px;
+    display: block;
+    margin: 10px auto 20px auto ;
+}
+
+.center{
+    display: block;
+    margin: auto;
+}
+
+
+
+.withoutMargin{
+    margin: 0px;
+    padding: 0px;
+}
+
+.buttonFull{
+    height: 80px;
+    width: 100%;
+}

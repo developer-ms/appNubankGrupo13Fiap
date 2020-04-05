@@ -1,0 +1,102 @@
+<ion-content>
+  <!--Saldo-->
+  <ion-grid class="grid-full">
+    <ion-row class="ion-align-items-center upper-content">
+      <ion-col size="12" size-lg>
+        <div class="saldo">
+          <nbk-saldo
+            label="Saldo disponível"
+            saldoAtual="{{account?.balance}}"
+          ></nbk-saldo>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!--Nav bar-->
+    <ion-row class="ion-align-items-center">
+      <ion-col class="withoutMargin">
+        <div>
+          <ion-grid class="ion-no-padding ion-no-margin">
+            <ion-row>
+              <ion-col size="3" size-md>
+                <nbk-button
+                  label="Depositar"
+                  iconName="arrow-down-circle-outline"
+                ></nbk-button>
+              </ion-col>
+              <ion-col size="3" size-md>
+                <nbk-button
+                  label="Pagar"
+                  iconName="barcode-outline"
+                ></nbk-button>
+              </ion-col>
+              <ion-col size="3" size-md>
+                <nbk-button
+                  label="Transferir"
+                  iconName="arrow-up-circle-outline"
+                ></nbk-button>
+              </ion-col>
+              <ion-col size="3" size-md>
+                <nbk-button label="Cobrar" iconName="card-outline"></nbk-button>
+              </ion-col>
+              <ion-col (click)="callEasyCreditPage()" size="3" size-xs *ngIf="account?.easyCredit">
+                <nbk-button label="Crédito Fácil" iconName="cash-outline"></nbk-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <!--Lista-->
+    <ion-row>
+
+      <ion-col
+        (click)="transationFutureClose = !transationFutureClose"
+        size="12"
+        size-lg
+        class="ion-no-margin ion-no-padding"
+      >
+        <ion-item color="gray" lines="none" class="ion-no-margin">
+          <ion-icon slot="end" name="close" *ngIf="transationFutureClose"></ion-icon>
+          <ion-icon slot="end" name="resize" *ngIf="!transationFutureClose"></ion-icon>
+          <ion-label>Lançamentos futuro</ion-label>
+        </ion-item>
+        <ion-list
+          lines="none"
+          *ngIf="transationFutureClose"
+          class="ion-no-margin ion-no-padding"
+        >
+          <div *ngFor="let transation of futureTransations">
+            <nbk-transacao [transation]="transation"></nbk-transacao>
+          </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col
+        (click)="transationClose = !transationClose"
+        size="12"
+        size-lg
+        class="ion-no-margin ion-no-padding"
+      >
+        <ion-item color="gray" lines="none" class="ion-no-margin">
+          <ion-icon slot="end" name="close" *ngIf="transationClose"></ion-icon>
+          <ion-icon slot="end" name="resize" *ngIf="!transationClose"></ion-icon>
+          <ion-label>Últimos lançamentos</ion-label>
+        </ion-item>
+        <ion-list
+          lines="none"
+          *ngIf="transationClose"
+          class="ion-no-margin ion-no-padding"
+        >
+          <div *ngFor="let transation of transations">
+            <nbk-transacao [transation]="transation"></nbk-transacao>
+          </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-toolbar>
+  <div class="content">
+    <ion-icon class="roxo" slot="start" name="arrow-back-outline" (click)="callAccount()"></ion-icon>
+  </div>
+</ion-toolbar>
+
+<ion-content fullscreen>
+  <div class="error-message"  *ngIf="showMessage">
+    <ion-item lines="none">
+      <ion-label color="danger">Erro ao realizar a contratação, por favor tente novamente!</ion-label>
+      <ion-icon slot="end" name="close" (click)="showMessage = !showMessage"></ion-icon>
+    </ion-item>
+  </div>
+  <nbk-slider-range (value)="valueMoney($event)" label="Informe o valor" prefix="R$" [isCurrency]="true" minValue="300"
+    maxValue="7000"></nbk-slider-range>
+  <nbk-slider-range (value)="valueMonth($event)" label="Informe a quantidade de meses" prefix="" [isCurrency]="false"
+    minValue="1" maxValue="60"></nbk-slider-range>
+
+  <div class="content-result">
+    <div class="result-label">
+      <ion-label slot="start">Valor total a pagar: </ion-label>
+      <ion-label class="result-value" color="success"
+        >{{labelTotal}}
+      </ion-label>
+    </div>
+    <div class="result-label">
+      <ion-label slot="start">Valor de cada parcela: </ion-label>
+      <ion-label class="result-value" color="success">{{labelMonth}}</ion-label>
+    </div>
+  </div>
+
+  <ion-grid class="ion-no-padding ion-no-margin">
+    <ion-row>
+      <ion-col size="3" size-md>
+        <nbk-button
+          label="Contratar"
+          iconName="arrow-down-circle-outline"
+          (click)="alertConfirmEasyCredit()"
+        ></nbk-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

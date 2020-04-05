@@ -1,0 +1,49 @@
+ion-range {
+    --bar-background: #00ff378e;
+    --bar-background-active: #2d813f;
+    --bar-border-radius: 4px;
+    --bar-height: 2px;
+    --height: 42px;
+    --knob-background: #6e0597;
+    --knob-border-radius: 50%;
+    --knob-box-shadow: none;
+    --knob-size: 24px;
+    --pin-background: {11: #9dcc9c}
+    --pin-color: {12: #9dcc9c}
+}
+
+ion-input {
+  color: #6e0597;
+  font-weight: bold;
+  font-size: 24px;
+  width: 200px;
+  text-align: center;
+
+  border-bottom: dotted;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(122, 122, 122);
+  margin: auto;
+}
+
+.label, .slider{
+  font-size: 12px;
+  color: rgb(122, 122, 122);
+}
+
+.content-center{
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.content-message{
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+
+
+

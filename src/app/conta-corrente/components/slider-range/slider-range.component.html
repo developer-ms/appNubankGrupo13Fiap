@@ -1,0 +1,31 @@
+<div class="content-center">
+  <ion-label class="label">{{label}}</ion-label>
+  <ion-input
+    (ionFocus)="hasFocusInput()"
+    (ionBlur)="noFocusInput()"
+    (ionInput)="onChangeInput($event)"
+    [(ngModel)]="inputValue"
+  ></ion-input>
+  <div class="content-message">
+    <ion-label color="danger" *ngIf="minValueInvalid()"
+      >Valor menor que {{ labelMin }}</ion-label
+    >
+    <ion-label color="danger" *ngIf="maxValueInvalid()"
+      >Valor maior que {{ labelMax }}</ion-label
+    >
+  </div>
+</div>
+
+<div class="slider">
+  <ion-range
+    pin="true"
+    min="{{ minValue }}"
+    max="{{ maxValue }}"
+    [(ngModel)]="sliderValue"
+    (ionFocus)="hasFocusSlider()"
+    (ionChange)="onChangeSlider(sliderValue)"
+  >
+    <ion-label slot="start">{{ labelMin }}</ion-label>
+    <ion-label slot="end">{{ labelMax }}</ion-label>
+  </ion-range>
+</div>

@@ -1,0 +1,32 @@
+<div class="content backgroundRoxo">
+  <div class="logo">
+    <ion-img src="../assets/img/nubank-logo-white.png"></ion-img>
+  </div>
+
+  <div class="center">
+    <form [formGroup]="loginForm" novalidate>
+      <nbk-input
+        errorMessage="Campo obrigatório ou e-mail inválido."
+        label="Usuário"
+      >
+        <ion-input
+          [class.invalid]="true"
+          type="text"
+          formControlName="user"
+        ></ion-input>
+      </nbk-input>
+
+      <nbk-input errorMessage="Campo obrigatório." label="Senha">
+        <ion-input type="password" formControlName="password"></ion-input>
+      </nbk-input>
+    </form>
+    <ion-button
+      [disabled]="!loginForm.valid"
+      expand="full"
+      class="login"
+      color="roxo"
+      (click)="loginAction(loginForm.value)"
+      >Login</ion-button
+    >
+  </div>
+</div>
